@@ -1,0 +1,23 @@
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/endure/Robot 3/build/openslam_gmapping
+[35m[1mConsolidate compiler generated dependencies of target utils[0m
+[35m[1mConsolidate compiler generated dependencies of target sensor_base[0m
+[ 13%] Built target sensor_base
+[ 27%] Built target utils
+[35m[1mConsolidate compiler generated dependencies of target sensor_range[0m
+[35m[1mConsolidate compiler generated dependencies of target sensor_odometry[0m
+[ 40%] Built target sensor_odometry
+[ 54%] Built target sensor_range
+[35m[1mConsolidate compiler generated dependencies of target scanmatcher[0m
+[ 59%] [32mBuilding CXX object scanmatcher/CMakeFiles/scanmatcher.dir/scanmatcherprocessor.cpp.o[0m
+In file included from [01m[K/home/endure/Robot 3/src/openslam_gmapping/scanmatcher/scanmatcherprocessor.cpp:2[m[K:
+[01m[K/home/endure/Robot 3/src/openslam_gmapping/scanmatcher/scanmatcherprocessor.h:4:10:[m[K [01;31m[Kfatal error: [m[Kgmapping/log/sensorlog.h: No such file or directory
+    4 | #include [01;31m[K<gmapping/log/sensorlog.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [scanmatcher/CMakeFiles/scanmatcher.dir/build.make:104: scanmatcher/CMakeFiles/scanmatcher.dir/scanmatcherprocessor.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:288: scanmatcher/CMakeFiles/scanmatcher.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

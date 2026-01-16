@@ -1,0 +1,33 @@
+[0.033s] Invoking command in '/home/endure/Robot 3/build/body_tracking': CMAKE_PREFIX_PATH=/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz:/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav:/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi:/home/endure/TA/yahboomcar_ws/install/yahboomcar_description:/opt/ros/humble /usr/bin/cmake /home/endure/Robot 3/src/yahboomcar_deeplearning/body_tracking -DCMAKE_INSTALL_PREFIX=/home/endure/Robot 3/install/body_tracking
+[0.442s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.442s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.442s] -- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)
+[0.442s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.442s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.442s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.442s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.482s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.583s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.586s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.846s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.957s] -- Found rclcpp_action: 16.0.16 (/opt/ros/humble/share/rclcpp_action/cmake)
+[1.017s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.050s] [31mCMake Error at CMakeLists.txt:39 (find_package):
+[1.051s]   By not providing "Findai_msgs.cmake" in CMAKE_MODULE_PATH this project has
+[1.051s]   asked CMake to find a package configuration file provided by "ai_msgs", but
+[1.051s]   CMake did not find one.
+[1.051s] 
+[1.051s]   Could not find a package configuration file provided by "ai_msgs" with any
+[1.051s]   of the following names:
+[1.051s] 
+[1.051s]     ai_msgsConfig.cmake
+[1.051s]     ai_msgs-config.cmake
+[1.051s] 
+[1.051s]   Add the installation prefix of "ai_msgs" to CMAKE_PREFIX_PATH or set
+[1.051s]   "ai_msgs_DIR" to a directory containing one of the above files.  If
+[1.051s]   "ai_msgs" provides a separate development package or SDK, be sure it has
+[1.055s]   been installed.
+[1.055s] 
+[1.055s] [0m
+[1.055s] -- Configuring incomplete, errors occurred!
+[1.055s] See also "/home/endure/Robot 3/build/body_tracking/CMakeFiles/CMakeOutput.log".

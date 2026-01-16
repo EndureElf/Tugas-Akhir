@@ -1,0 +1,24 @@
+[2.898s] Invoking command in '/home/endure/Robot 3/build/custom_explorer': PYTHONPATH=/home/endure/Robot 3/build/custom_explorer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/Robot 3/install/custom_explorer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/endure/Robot 3/build/custom_explorer/build --no-deps symlink_data
+[4.610s] running develop
+[5.849s] running egg_info
+[5.859s] creating custom_explorer.egg-info
+[5.859s] writing custom_explorer.egg-info/PKG-INFO
+[5.860s] writing dependency_links to custom_explorer.egg-info/dependency_links.txt
+[5.860s] writing entry points to custom_explorer.egg-info/entry_points.txt
+[5.860s] writing requirements to custom_explorer.egg-info/requires.txt
+[5.860s] writing top-level names to custom_explorer.egg-info/top_level.txt
+[5.873s] writing manifest file 'custom_explorer.egg-info/SOURCES.txt'
+[5.888s] reading manifest file 'custom_explorer.egg-info/SOURCES.txt'
+[5.892s] writing manifest file 'custom_explorer.egg-info/SOURCES.txt'
+[5.915s] running build_ext
+[5.922s] Creating /home/endure/Robot 3/install/custom_explorer/lib/python3.10/site-packages/custom-explorer.egg-link (link to .)
+[5.934s] Installing explorer script to /home/endure/Robot 3/install/custom_explorer/lib/custom_explorer
+[5.934s] 
+[5.938s] Installed /home/endure/Robot 3/build/custom_explorer
+[5.939s] running symlink_data
+[5.940s] creating /home/endure/Robot 3/install/custom_explorer/share/ament_index
+[5.951s] creating /home/endure/Robot 3/install/custom_explorer/share/ament_index/resource_index
+[5.951s] creating /home/endure/Robot 3/install/custom_explorer/share/ament_index/resource_index/packages
+[5.951s] symbolically linking /home/endure/Robot 3/build/custom_explorer/resource/custom_explorer -> /home/endure/Robot 3/install/custom_explorer/share/ament_index/resource_index/packages
+[5.952s] symbolically linking /home/endure/Robot 3/build/custom_explorer/package.xml -> /home/endure/Robot 3/install/custom_explorer/share/custom_explorer
+[6.378s] Invoked command in '/home/endure/Robot 3/build/custom_explorer' returned '0': PYTHONPATH=/home/endure/Robot 3/build/custom_explorer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/Robot 3/install/custom_explorer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/endure/Robot 3/build/custom_explorer/build --no-deps symlink_data

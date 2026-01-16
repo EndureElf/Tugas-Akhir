@@ -1,0 +1,8 @@
+<launch>
+    <include file="$(find-pkg-share astra_camera)/launch/astra.launch.xml"/>
+    <include file="$(find-pkg-share rosbridge_server)/launch/rosbridge_websocket_launch.xml"/>
+    <include file="$(find-pkg-share yahboomcar_bringup)/launch/yahboomcar_bringup_launch.py"/>
+    <node name="rosboard" pkg="rosboard" exec="rosboard_node"/>
+    <node name="color_identify" pkg="yahboomcar_colortrack" exec="color_identify" output="screen"/>
+    <node name="color_track" pkg="yahboomcar_colortrack" exec="color_track" output="screen"/>
+</launch>

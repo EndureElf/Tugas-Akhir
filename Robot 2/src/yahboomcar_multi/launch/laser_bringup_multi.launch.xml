@@ -1,0 +1,12 @@
+<launch>
+    <arg name="robot_name" default="robot2"/>
+    <!-- DRIVER MS200 TANPA NAMESPACE -->
+    <include file="$(find-pkg-share yahboomcar_multi)/launch/lidar_multi.launch.xml"/>
+    <include file="$(find-pkg-share yahboomcar_description)/launch/description_multi_robot2.launch.py"/>
+    <group>
+        <push-ros-namespace namespace="$(var robot_name)"/>
+        <include file="$(find-pkg-share yahboomcar_multi)/launch/yahboomcar_bringup_multi.launch.xml"/>
+    </group>
+
+</launch>
+

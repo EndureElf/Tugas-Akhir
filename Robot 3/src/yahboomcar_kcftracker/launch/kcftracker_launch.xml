@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find-pkg-share astra_camera)/launch/astro_pro_plus.launch.xml"/>
+    <include file="$(find-pkg-share yahboomcar_bringup)/launch/yahboomcar_bringup_launch.py"/>           
+</launch>

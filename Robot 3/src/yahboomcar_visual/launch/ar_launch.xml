@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find-pkg-share rosbridge_server)/launch/rosbridge_websocket_launch.xml"/>
+    <node name="rosboard" pkg="rosboard" exec="rosboard_node"/>
+    <node name="simple_AR" pkg="yahboomcar_visual" exec="simple_AR" output="screen"/>
+</launch>

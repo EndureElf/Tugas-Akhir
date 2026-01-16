@@ -1,0 +1,8 @@
+robot1:
+  imu_filter:
+    ros__parameters:
+      publish_tf: false
+      stateless: true
+      use_mag: true
+      fixed_frame: "odom"
+      world_frame: "enu"

@@ -1,0 +1,35 @@
+<launch>
+
+    <group>
+        <arg name="robot_name" default="robot2"/>
+
+        <node pkg="yahboomcar_bringup" exec="Mcnamu_driver" name="driver" output="screen"/>
+
+        <node pkg="yahboomcar_base_node" exec="base_node" name="base_node" output="screen">
+            <param name="pub_odom_tf" value="true"/>
+            <param name="odom_frame" value="$(var robot_name)/odom"/>
+            <param name="base_footprint_frame" value="$(var robot_name)/base_footprint"/>
+        </node>
+
+        <node pkg="imu_filter_madgwick"
+              exec="imu_filter_madgwick_node"
+              name="imu_filter"
+              output="screen">
+            <param from="$(find-pkg-share yahboomcar_multi)/param/imu_filter_param.yaml"/>
+        </node>
+
+        <node pkg="robot_localization"
+              exec="ekf_node"
+              name="ekf_filter_node"
+              output="screen" >
+            <param from="$(find-pkg-share yahboomcar_multi)/param/ekf_$(var robot_name).yaml"/>
+        </node>
+
+        <node pkg="tf2_ros" exec="static_transform_publisher"
+            name="base_footprint_to_base_link"
+            output="screen"
+            args="0 0 0.05 0 0 0 $(var robot_name)/base_footprint $(var robot_name)/base_link"/>
+    </group>
+    
+</launch>
+

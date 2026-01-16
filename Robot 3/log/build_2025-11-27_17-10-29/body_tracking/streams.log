@@ -1,0 +1,54 @@
+[0.060s] Invoking command in '/home/endure/Robot 3/build/body_tracking': CMAKE_PREFIX_PATH=/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz:/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav:/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi:/home/endure/TA/yahboomcar_ws/install/yahboomcar_description:/opt/ros/humble /usr/bin/cmake /home/endure/Robot 3/src/yahboomcar_deeplearning/body_tracking -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/endure/Robot 3/install/body_tracking
+[0.905s] -- The C compiler identification is GNU 11.4.0
+[0.905s] -- The CXX compiler identification is GNU 11.4.0
+[0.905s] -- Detecting C compiler ABI info
+[1.011s] -- Detecting C compiler ABI info - done
+[1.078s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.080s] -- Detecting C compile features
+[1.083s] -- Detecting C compile features - done
+[1.143s] -- Detecting CXX compiler ABI info
+[1.720s] -- Detecting CXX compiler ABI info - done
+[1.822s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.829s] -- Detecting CXX compile features
+[1.835s] -- Detecting CXX compile features - done
+[1.869s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.745s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.943s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[3.042s] -- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)
+[3.575s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[3.639s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[3.736s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[3.877s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.043s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.818s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[4.837s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[5.607s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[6.031s] -- Found FastRTPS: /opt/ros/humble/include  
+[6.708s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[6.789s] -- Looking for pthread.h
+[7.367s] -- Looking for pthread.h - found
+[7.373s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[7.939s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[7.943s] -- Found Threads: TRUE  
+[8.648s] -- Found rclcpp_action: 16.0.16 (/opt/ros/humble/share/rclcpp_action/cmake)
+[9.266s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[9.650s] -- Configuring incomplete, errors occurred!
+[9.651s] See also "/home/endure/Robot 3/build/body_tracking/CMakeFiles/CMakeOutput.log".
+[9.659s] [31mCMake Error at CMakeLists.txt:39 (find_package):
+[9.659s]   By not providing "Findai_msgs.cmake" in CMAKE_MODULE_PATH this project has
+[9.660s]   asked CMake to find a package configuration file provided by "ai_msgs", but
+[9.660s]   CMake did not find one.
+[9.660s] 
+[9.660s]   Could not find a package configuration file provided by "ai_msgs" with any
+[9.660s]   of the following names:
+[9.661s] 
+[9.665s]     ai_msgsConfig.cmake
+[9.666s]     ai_msgs-config.cmake
+[9.670s] 
+[9.670s]   Add the installation prefix of "ai_msgs" to CMAKE_PREFIX_PATH or set
+[9.671s]   "ai_msgs_DIR" to a directory containing one of the above files.  If
+[9.671s]   "ai_msgs" provides a separate development package or SDK, be sure it has
+[9.671s]   been installed.
+[9.671s] 
+[9.671s] [0m
+[9.758s] Invoked command in '/home/endure/Robot 3/build/body_tracking' returned '1': CMAKE_PREFIX_PATH=/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz:/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav:/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi:/home/endure/TA/yahboomcar_ws/install/yahboomcar_description:/opt/ros/humble /usr/bin/cmake /home/endure/Robot 3/src/yahboomcar_deeplearning/body_tracking -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/endure/Robot 3/install/body_tracking

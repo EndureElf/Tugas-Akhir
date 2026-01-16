@@ -1,0 +1,9 @@
+In file included from [01m[K/home/endure/Robot 3/src/openslam_gmapping/scanmatcher/scanmatcherprocessor.cpp:2[m[K:
+[01m[K/home/endure/Robot 3/src/openslam_gmapping/scanmatcher/scanmatcherprocessor.h:4:10:[m[K [01;31m[Kfatal error: [m[Kgmapping/log/sensorlog.h: No such file or directory
+    4 | #include [01;31m[K<gmapping/log/sensorlog.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [scanmatcher/CMakeFiles/scanmatcher.dir/build.make:104: scanmatcher/CMakeFiles/scanmatcher.dir/scanmatcherprocessor.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:288: scanmatcher/CMakeFiles/scanmatcher.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

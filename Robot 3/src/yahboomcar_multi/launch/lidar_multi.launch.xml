@@ -1,0 +1,28 @@
+<launch>
+  <group>
+    <push-ros-namespace namespace="robot1"/>
+
+    <!-- Node LiDAR -->
+    <node pkg="oradar_lidar" exec="oradar_scan" name="MS200" output="screen">
+      <param name="device_model" value="MS200"/>
+
+      <!-- Frame dan topic yang dipakai AMCL -->
+      <param name="frame_id" value="robot1/laser"/>
+      <param name="scan_topic" value="scan"/>  <!-- akan jadi /robot1/scan -->
+      <param name="port_name" value="/dev/oradar"/>
+      <param name="baudrate" value="230400"/>
+      <param name="angle_min" value="0.0"/>
+      <param name="angle_max" value="6.28319"/>
+      <param name="range_min" value="0.15"/>
+      <param name="range_max" value="20.0"/>
+      <param name="clockwise" value="false"/>
+      <param name="motor_speed" value="10"/>
+    </node>
+
+    <!-- Static TF: PERLU nama frame FULL, namespace TIDAK otomatis -->
+    <node pkg="tf2_ros" exec="static_transform_publisher"
+          name="base_link_to_base_laser" output="screen"
+          args="0 0 0.18 0 0 0 robot1/base_link robot1/laser"/>
+  </group>
+</launch>
+
