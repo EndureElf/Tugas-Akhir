@@ -16,7 +16,7 @@ class HeadingAlignedDWATracker(Node):
         self.get_logger().info("Heading-Aligned Holonomic DWA - Final Orientation After Position")
         
         # Parameter
-        # Motion limits (now as ROS parameters)
+        # Motion limits
         self.declare_parameter('max_vel_x', 0.3)  # Forward/backward
         self.declare_parameter('max_vel_y', 0.01)  # Sideways
         self.declare_parameter('max_rot_vel', 1.0)  # Rotation
