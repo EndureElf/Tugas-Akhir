@@ -30,28 +30,28 @@ class Robot2FollowerPID(Node):
         self.current_formation_idx = 0
         self.formation_changed = False
         
-        # Nilai Kp, Ki, Kd hasil tuning
+        # Nilai Kp, Ki, Kd
         self.Kp = np.diag([1.9, 1.9, 1.0]) 
         self.Ki = np.diag([0.1, 0.1, 0.1])
         self.Kd = np.diag([0.0001, 0.0001, 0.001])
         
-        # Feedforward gain tetap sama
+        # Gain Feedforward
         self.alpha_ff = np.diag([0.5, 0.5, 0.3])
 
-        # Kecepatan maksimum untuk formasi berbeda
-        self.vx_max_belakang_kanan = 0.3   # Normal
+        # Kecepatan maksimum
+        self.vx_max_belakang_kanan = 0.3 
         self.vy_max_belakang_kanan = 0.3
         self.w_max_belakang_kanan = 1.0
         
-        self.vx_max_belakang = 0.28        # Lebih lambat
+        self.vx_max_belakang = 0.28 
         self.vy_max_belakang = 0.28
         self.w_max_belakang = 0.8
         
-        self.vx_max_belakang_kiri = 0.3    # Normal
+        self.vx_max_belakang_kiri = 0.3 
         self.vy_max_belakang_kiri = 0.3
         self.w_max_belakang_kiri = 1.0
         
-        self.vx_max_kiri_pas = 0.42       # Lebih cepat (mengejar leader)
+        self.vx_max_kiri_pas = 0.42 
         self.vy_max_kiri_pas = 0.42
         self.w_max_kiri_pas = 1.0
         
@@ -160,7 +160,7 @@ class Robot2FollowerPID(Node):
                     dy = abs(new_pose["y"] - self.last_leader_pose["y"])
                     dyaw = abs(new_pose["yaw"] - self.last_leader_pose["yaw"])
                     
-                    # Threshold untuk menentukan "berbeda" - 1 cm
+                    # Threshold berbeda 1 cm
                     threshold = 0.01
                     
                     if dx > threshold or dy > threshold or dyaw > threshold:
@@ -174,8 +174,6 @@ class Robot2FollowerPID(Node):
                         # Jika AMCL sama, maka akan menuju dead reckoning 
                         self.leader_pose = new_pose
                         self.last_leader_pose = new_pose.copy()
-                        # global_leader_pose TIDAK di-update dari AMCL
-                        # (akan lanjut dead reckoning di control loop)
                         
                         self.get_logger().debug(f"AMCL same: Continuing dead reckoning")
                 
@@ -224,9 +222,9 @@ class Robot2FollowerPID(Node):
                     self.vy_max = 0.3
                     self.w_max = 1.0
                 
-                self.get_logger().info(f"✅ Formasi berubah ke: {state['name']} (jarak: {self.total_distance:.2f}m)")
-                self.get_logger().info(f"   Offset: ({self.offset_x}, {self.offset_y})")
-                self.get_logger().info(f"   Max Vel: ({self.vx_max:.2f}, {self.vy_max:.2f}, {self.w_max:.2f})")
+                self.get_logger().info(f"Formasi berubah ke: {state['name']} (jarak: {self.total_distance:.2f}m)")
+                self.get_logger().info(f"Offset: ({self.offset_x}, {self.offset_y})")
+                self.get_logger().info(f"Max Vel: ({self.vx_max:.2f}, {self.vy_max:.2f}, {self.w_max:.2f})")
                 break
 
     def update_global_leader_pose(self, dt):
@@ -239,7 +237,7 @@ class Robot2FollowerPID(Node):
             
         # Jika ada cmd_vel dan global_leader_pose sudah diinisialisasi
         if self.leader_cmd is not None:
-            # Dead reckoning: global_leader_pose += cmd_vel * dt
+            # Dead reckoning
             vx = self.leader_cmd["vx"]
             vy = self.leader_cmd["vy"]
             w = self.leader_cmd["w"]
@@ -247,7 +245,7 @@ class Robot2FollowerPID(Node):
             # Transformasi kecepatan ke koordinat global
             theta = self.global_leader_pose["yaw"]
             
-            # Integrasi posisi (Euler method)
+            # Integrasi posisi
             self.global_leader_pose["x"] += (vx * math.cos(theta) - vy * math.sin(theta)) * dt
             self.global_leader_pose["y"] += (vx * math.sin(theta) + vy * math.cos(theta)) * dt
             self.global_leader_pose["yaw"] += w * dt
@@ -342,7 +340,7 @@ class Robot2FollowerPID(Node):
         # PID Control dengan gain yang sudah di-tuning
         e = np.array([[ex], [ey], [eyaw]])
         
-        # Integral term dengan anti-windup
+        # Integral term
         self.errSum += e * dt
         self.errSum = np.clip(self.errSum, -1.0, 1.0)
         
@@ -350,7 +348,7 @@ class Robot2FollowerPID(Node):
         dErr = (e - self.lastErr) / dt
         self.lastErr = e
         
-        # PID output dengan gain yang tetap sama
+        # PID output
         u_pid = self.Kp @ e + self.Ki @ self.errSum + self.Kd @ dErr
         
         # Feedforward
