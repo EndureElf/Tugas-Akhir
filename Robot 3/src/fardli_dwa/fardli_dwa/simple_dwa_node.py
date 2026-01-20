@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-"""
-HOLONOMIC DWA with HEADING ALIGNMENT and DYNAMIC PARAMETERS
-Robot first aligns heading, then uses holonomic motion only when needed
-FINAL ORIENTATION ONLY AFTER POSITION REACHED
-"""
 
 import rclpy
 from rclpy.node import Node
@@ -18,9 +13,9 @@ class HeadingAlignedDWATracker(Node):
     def __init__(self):
         super().__init__('heading_aligned_dwa_tracker')
         
-        self.get_logger().info("🔄 Heading-Aligned Holonomic DWA - Final Orientation After Position")
+        self.get_logger().info("Heading-Aligned Holonomic DWA - Final Orientation After Position")
         
-        # ========== DECLARE PARAMETERS ==========
+        # Parameter
         # Motion limits (now as ROS parameters)
         self.declare_parameter('max_vel_x', 0.3)  # Forward/backward
         self.declare_parameter('max_vel_y', 0.01)  # Sideways
@@ -60,7 +55,7 @@ class HeadingAlignedDWATracker(Node):
         # Local plan
         self.local_plan_size = 20
         
-        # ========== STATE ==========
+        # State
         self.robot_pose = [0.0, 0.0, 0.0]
         self.robot_vel = [0.0, 0.0, 0.0]
         self.laser_data = None
@@ -79,7 +74,7 @@ class HeadingAlignedDWATracker(Node):
         # Final goal pose
         self.final_goal_pose = None  # [x, y, theta]
         
-        # ========== SUBSCRIBERS ==========
+        # Subscribe
         self.create_subscription(
             PoseWithCovarianceStamped,
             '/robot1/amcl_pose',
@@ -101,16 +96,16 @@ class HeadingAlignedDWATracker(Node):
             10
         )
         
-        # ========== PUBLISHERS ==========
+        # Publish
         self.cmd_pub = self.create_publisher(Twist, '/robot1/cmd_vel', 10)
         self.local_plan_pub = self.create_publisher(Path, '/robot1/local_plan', 10)
         
-        # ========== TIMERS ==========
+        # Timer
         self.create_timer(0.1, self.control_loop)
         self.create_timer(1.0, self.status_report)
         self.create_timer(2.0, self.update_parameters)  # Update parameters every 2 seconds
         
-        self.get_logger().info("✅ Heading-Aligned DWA Ready - Final Orientation After Position")
+        self.get_logger().info("Heading-Aligned DWA Ready - Final Orientation After Position")
     
     def update_parameters(self):
         """Update all parameters from ROS parameter server"""
@@ -171,7 +166,7 @@ class HeadingAlignedDWATracker(Node):
         if len(new_path) < 2:
             return
         
-        self.get_logger().info(f"📈 New path: {len(new_path)} points")
+        self.get_logger().info(f"New path: {len(new_path)} points")
         self.global_path = new_path
         self.path_id += 1
         
@@ -180,7 +175,7 @@ class HeadingAlignedDWATracker(Node):
             self.final_goal_pose = new_path[-1]
             self.goal_orientation = new_path[-1][2]
             self.position_reached = False  # Reset flag untuk path baru
-            self.get_logger().info(f"🎯 Final goal: position [{self.final_goal_pose[0]:.2f}, {self.final_goal_pose[1]:.2f}], "
+            self.get_logger().info(f"Final goal: position [{self.final_goal_pose[0]:.2f}, {self.final_goal_pose[1]:.2f}], "
                                  f"orientation: {math.degrees(self.goal_orientation):.1f}°")
         
         # Reset tracking
@@ -234,7 +229,7 @@ class HeadingAlignedDWATracker(Node):
         if not self.global_path or len(self.global_path) < 2:
             return None, 0.0
         
-        # Check if we should use final orientation (only if position reached and in final alignment state)
+        # Final Orientasi
         if (self.position_reached and 
             self.current_state == self.STATE_FINAL_ALIGNING and
             self.final_goal_pose):
@@ -370,7 +365,7 @@ class HeadingAlignedDWATracker(Node):
                 self.current_path_index += 1
                 self.progress_along_segment = 0.0
     
-    # ========== MAIN CONTROL ==========
+    # Main Control
     def control_loop(self):
         if not self.laser_data:
             return
@@ -449,7 +444,7 @@ class HeadingAlignedDWATracker(Node):
         else:
             dist_to_goal = dist_to_target
         
-        # State machine logic - SIMPLE PATH FOLLOWING
+        # Path Following
         if dist_to_goal < self.goal_tolerance * 1.5:  # Getting close to goal
             self.current_state = self.STATE_APPROACHING
         elif heading_error > self.heading_alignment_tolerance:
@@ -473,7 +468,7 @@ class HeadingAlignedDWATracker(Node):
         robot_theta = self.robot_pose[2]
         heading_error = self.normalize_angle(self.target_heading - robot_theta)
         
-        # P-control for rotation
+        # P control untuk heading
         kp = 1.5
         w = kp * heading_error
         w = max(-self.max_rot_vel, min(self.max_rot_vel, w))
@@ -573,7 +568,7 @@ class HeadingAlignedDWATracker(Node):
         vx_local = dx * cos_t + dy * sin_t
         vy_local = -dx * sin_t + dy * cos_t
         
-        # P-control with limits
+        # P-control dengan limit
         kp = 0.5
         vx = kp * vx_local
         vy = kp * vy_local
@@ -613,7 +608,7 @@ class HeadingAlignedDWATracker(Node):
         if abs(heading_error) < self.heading_alignment_tolerance:
             return 0.0, 0.0, 0.0
         
-        # P-control for rotation
+        # P control untuk orientasi
         kp = 2.0  # Stronger control for final alignment
         w = kp * heading_error
         w = max(-self.max_rot_vel * 0.8, min(self.max_rot_vel * 0.8, w))
@@ -732,7 +727,7 @@ class HeadingAlignedDWATracker(Node):
         
         return trajectory
     
-    # ========== UTILITIES ==========
+    # Utilities
     def closest_point_on_segment(self, px, py, x1, y1, x2, y2):
         """Find closest point on line segment"""
         dx = x2 - x1
