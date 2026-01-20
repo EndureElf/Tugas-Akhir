@@ -14,7 +14,7 @@ class Robot1UDPSender(Node):
     def __init__(self):
         super().__init__('robot1_udp_sender')
 
-        self.robot2_ip = '192.168.0.88'   # GANTI IP ROBOT2
+        self.robot2_ip = '192.168.0.88'
         self.robot2_port = 8891
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
