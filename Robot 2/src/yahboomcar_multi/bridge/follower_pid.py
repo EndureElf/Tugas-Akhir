@@ -126,8 +126,6 @@ class Robot2FollowerPID(Node):
                         # Jika AMCL sama, maka akan menuju dead reckoning 
                         self.leader_pose = new_pose
                         self.last_leader_pose = new_pose.copy()
-                        # global_leader_pose TIDAK di-update dari AMCL
-                        # (akan lanjut dead reckoning di control loop)
                         
                         self.get_logger().debug(f"AMCL same: Continuing dead reckoning")
                 
@@ -146,7 +144,7 @@ class Robot2FollowerPID(Node):
             
         # Jika ada cmd_vel dan global_leader_pose sudah diinisialisasi
         if self.leader_cmd is not None:
-            # Dead reckoning: global_leader_pose += cmd_vel * dt
+            # Dead reckoning: global_leader_pose
             vx = self.leader_cmd["vx"]
             vy = self.leader_cmd["vy"]
             w = self.leader_cmd["w"]
@@ -154,7 +152,7 @@ class Robot2FollowerPID(Node):
             # Transformasi kecepatan ke koordinat global
             theta = self.global_leader_pose["yaw"]
             
-            # Integrasi posisi (Euler method)
+            # Integrasi posisi
             self.global_leader_pose["x"] += (vx * math.cos(theta) - vy * math.sin(theta)) * dt
             self.global_leader_pose["y"] += (vx * math.sin(theta) + vy * math.cos(theta)) * dt
             self.global_leader_pose["yaw"] += w * dt
@@ -225,10 +223,10 @@ class Robot2FollowerPID(Node):
             self.publish_zero_vel()
             return  # Keluar dari control loop, robot berhenti
         
-        # PID Control (hanya jika belum mencapai target)
+        # PID Control
         e = np.array([[ex], [ey], [eyaw]])
         
-        # Integral term dengan anti-windup
+        # Integral term
         self.errSum += e * dt
         self.errSum = np.clip(self.errSum, -1.0, 1.0)
         
@@ -267,7 +265,7 @@ class Robot2FollowerPID(Node):
         vy = self.clamp(u[1, 0], self.vy_max)
         w = self.clamp(u[2, 0], self.w_max)
         
-        # Apply velocity deadband
+        # Velocity Deadband
         if abs(vx) < self.vel_deadband:
             vx = 0.0
         if abs(vy) < self.vel_deadband:
