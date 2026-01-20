@@ -1,11 +1,4 @@
 #!/usr/bin/env python3
-"""
-Global Path Planner - Dengan Global Costmap Gradient dan Goal Checking
-DIJKSTRA VERSION: A* changed to Dijkstra for simpler path computation
-DITAMBAH: cmd_vel tracking untuk estimasi jarak real-time
-DITAMBAH: Fitur Waypoint untuk perencanaan multi-tahap dengan PATH CHAINING
-DITAMBAH: Penyimpanan data Dijkstra (all_nodes, final_path, open_set, summary) sekali saja
-"""
 
 import rclpy
 from rclpy.node import Node
@@ -50,8 +43,7 @@ class GlobalPathPlanner(Node):
         
         # Path smoothing parameters
         self.smoothing_max_angle = math.radians(60)  # Sudut maksimal sebelum smoothing
-        
-        # ========== DIJKSTRA DATA SAVING PARAMETERS ==========
+
         self.dijkstra_data_saving_enabled = True  # Enable/disable data saving
         self.dijkstra_data_saved = False  # Flag untuk menandai data sudah disimpan
         self.dijkstra_save_path = "/home/sunrise/dijkstra_data"  # Path untuk penyimpanan
@@ -64,7 +56,6 @@ class GlobalPathPlanner(Node):
         # Membuat direktori jika belum ada
         os.makedirs(self.dijkstra_save_path, exist_ok=True)
         
-        # ========== WAYPOINT PARAMETERS ==========
         self.waypoints = []  # List of waypoints [[x, y, theta], ...]
         self.current_waypoint_index = 0  # Index waypoint yang sedang aktif
         self.final_goal_pose = None  # Goal akhir setelah semua waypoints
@@ -74,19 +65,16 @@ class GlobalPathPlanner(Node):
         self.full_path = []  # Path lengkap dari start ke goal melalui semua waypoints
         self.path_segments = []  # List of path segments untuk setiap waypoint
         self.accumulated_lengths = []  # Panjang akumulasi untuk setiap segment
-        
-        # ========== ENHANCED: REAL-TIME LENGTH UPDATE PARAMETERS ==========
+
         self.fast_update_hz = 10.0          # 10 Hz updates
         self.length_update_interval = 1.0 / self.fast_update_hz
         
-        # ========== CMD_VEL BASED TRACKING ==========
         self.cmd_vel_linear = 0.0
         self.last_cmd_vel_update_time = None
         self.traveled_from_cmd_vel = 0.0
         
-        # ========== STATE ==========
         self.robot_pose = None  # x, y, theta
-        self.goal_pose = None   # [x, y, theta] - current target (bisa waypoint atau final goal)
+        self.goal_pose = None   # [x, y, theta] untuk waypoint atau goal pose
         self.map_data = None
         self.map_width = 0
         self.map_height = 0
@@ -126,8 +114,7 @@ class GlobalPathPlanner(Node):
         self.total_plans = 0
         self.dijkstra_time = 0.0
         self.start_time = time.time()
-        
-        # ========== QoS PROFILES ==========
+
         map_qos = QoSProfile(
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=1,
@@ -142,7 +129,6 @@ class GlobalPathPlanner(Node):
             durability=QoSDurabilityPolicy.TRANSIENT_LOCAL
         )
         
-        # ========== SUBSCRIBERS ==========
         self.create_subscription(
             OccupancyGrid,
             '/map',
@@ -164,15 +150,14 @@ class GlobalPathPlanner(Node):
             10
         )
         
-        # ========== NEW: WAYPOINT SUBSCRIBER ==========
+        # Untuk Goal 1
         self.create_subscription(
             PoseStamped,
             '/robot3/goal_pose',
             self.waypoint_callback,
             10
         )
-        
-        # ========== NEW: CMD_VEL SUBSCRIBER ==========
+    
         self.create_subscription(
             Twist,
             '/robot1/cmd_vel',
@@ -180,7 +165,6 @@ class GlobalPathPlanner(Node):
             10
         )
         
-        # ========== PUBLISHERS ==========
         self.path_pub = self.create_publisher(Path, '/robot1/plan', 10)
         self.costmap_pub = self.create_publisher(OccupancyGrid, '/robot1/global_costmap/costmap', 10)
         self.path_length_pub = self.create_publisher(Float32, '/robot1/path_length', 10)
@@ -189,14 +173,13 @@ class GlobalPathPlanner(Node):
         self.goal_status_pub = self.create_publisher(Bool, '/robot1/goal_reached', 10)
         self.performance_pub = self.create_publisher(Float32, '/robot1/planning_time', 10)
         
-        # ========== NEW: WAYPOINT STATUS PUBLISHER ==========
         self.waypoint_status_pub = self.create_publisher(String, '/robot1/waypoint_status', 10)
         
-        # ========== TIMERS ==========
+        # Timers
         # ENHANCED: Real-time length updates (10 Hz)
         self.create_timer(self.length_update_interval, self.fast_length_update_callback)
         
-        # ORIGINAL TIMERS (ALL PRESERVED)
+        # ORIGINAL Timers
         self.create_timer(0.5, self.publish_path_callback)  # Publish path
         self.create_timer(0.5, self.publish_costmap_callback)  # Publish costmap
         self.create_timer(0.1, self.check_waypoint_reached_callback)  # High-frequency waypoint checking
@@ -212,7 +195,7 @@ class GlobalPathPlanner(Node):
         self.get_logger().info("=" * 70)
         self.get_logger().info(f"Global Path Planner with Goal Checking and Waypoints started")
     
-    # ========== DIJKSTRA DATA SAVING FUNCTIONS ==========
+    # Djikstra
     def _reset_dijkstra_data(self):
         """Reset data Dijkstra untuk penyimpanan baru"""
         self.dijkstra_nodes_data = []
@@ -394,7 +377,6 @@ class GlobalPathPlanner(Node):
         except Exception as e:
             self.get_logger().error(f"Failed to save summary statistics: {str(e)}")
     
-    # ========== MODIFIED: COSTMAP AWARE DIJKSTRA ==========
     def costmap_aware_dijkstra(self, start_grid, goal_grid, save_data=False):
         """Dijkstra algorithm yang aware terhadap costmap gradient dengan data saving"""
         # Reset data jika akan menyimpan
@@ -406,7 +388,7 @@ class GlobalPathPlanner(Node):
                      (1, 1), (1, -1), (-1, 1), (-1, -1)]
         diagonal_cost = math.sqrt(2)
         
-        # Priority queue untuk Dijkstra - hanya menggunakan g_score (cost dari start)
+        # Priority queue untuk Dijkstra
         open_set = []
         heapq.heappush(open_set, (0, start_grid))
         
@@ -437,7 +419,7 @@ class GlobalPathPlanner(Node):
                     parent=came_from[current]
                 )
             
-            # EARLY EXIT: Jika sudah mencapai goal
+            # EARLY EXIT: jika sudah mencapai goal
             if current == goal_grid:
                 if save_data and self.dijkstra_data_saving_enabled and not self.dijkstra_data_saved:
                     self._capture_open_set_snapshot_dijkstra(open_set, g_score, iteration_counter)
@@ -538,7 +520,7 @@ class GlobalPathPlanner(Node):
         
         return path
     
-    # ========== NEW: WAYPOINT CALLBACK dengan PATH CHAINING ==========
+    # New waypoint
     def waypoint_callback(self, msg):
         """Process waypoint pose dari Rviz (robot3/goal_pose) dengan path chaining"""
         # Extract position
@@ -661,7 +643,7 @@ class GlobalPathPlanner(Node):
         
         self.path_valid = True
         
-        self.get_logger().info(f"✅ Full chained path computed: {len(self.global_path)} waypoints, "
+        self.get_logger().info(f"Path Computed: {len(self.global_path)} waypoints, "
                               f"total length: {self.path_length:.2f}m")
         
         # Publish the path
@@ -688,7 +670,7 @@ class GlobalPathPlanner(Node):
             self.get_logger().warn(f"Start or goal position is in/near obstacle")
             return None
         
-        # Run Dijkstra algorithm (dengan opsi save_data)
+        # Run Dijkstra algorithm
         path_grid = self.costmap_aware_dijkstra(start_grid, goal_grid, save_data)
         
         if not path_grid:
@@ -727,9 +709,6 @@ class GlobalPathPlanner(Node):
         
         return smoothed
     
-    # ========== ORIGINAL FUNCTIONS (PRESERVED) ==========
-    
-    # ========== NEW: CMD_VEL CALLBACK ==========
     def cmd_vel_callback(self, msg):
         """Track traveled distance from cmd_vel commands"""
         current_time = time.time()
@@ -839,7 +818,6 @@ class GlobalPathPlanner(Node):
         
         self.get_logger().info(f"Creating fast costmap gradient for {len(obstacle_y)} obstacle cells...")
         
-        # ========== FAST DISTANCE FIELD ==========
         # Initialize distance field
         distance_field = np.full((self.map_height, self.map_width), 
                                 float('inf'), dtype=np.float32)
@@ -858,13 +836,13 @@ class GlobalPathPlanner(Node):
             x_min = max(0, x - max_inflation)
             x_max = min(self.map_width, x + max_inflation + 1)
             
-            # Create coordinate grids dengan numpy (VECTORIZED)
+            # Create coordinate grids dengan numpy
             yy, xx = np.mgrid[y_min:y_max, x_min:x_max]
             
-            # Calculate distances (VECTORIZED)
+            # Calculate distance
             distances = np.sqrt((xx - x)**2 + (yy - y)**2)
             
-            # Update distance field (VECTORIZED)
+            # Update distance field
             current_slice = distance_field[y_min:y_max, x_min:x_max]
             update_mask = distances < current_slice
             current_slice[update_mask] = distances[update_mask]
@@ -873,8 +851,7 @@ class GlobalPathPlanner(Node):
         # Set obstacle cells to 0 distance
         distance_field[obstacle_y, obstacle_x] = 0
         
-        # ========== APPLY GRADIENT COSTS ==========
-        # Lethal area (inner radius)
+        # Lethal area
         lethal_mask = distance_field <= self.inflation_radius * 0.7
         self.costmap[lethal_mask] = self.lethal_cost
         
@@ -898,7 +875,7 @@ class GlobalPathPlanner(Node):
         
         self.costmap_created = True
         total_time = time.time() - start_time
-        self.get_logger().info(f"✅ Fast costmap created in {total_time:.2f}s")
+        self.get_logger().info(f"Fast costmap created in {total_time:.2f}s")
     
     def create_planning_grid(self):
         """Create planning grid from costmap (untuk Dijkstra)"""
@@ -943,7 +920,6 @@ class GlobalPathPlanner(Node):
         if self.waypoint_mode and self.waypoints and not self.goal_received:
             self.process_next_waypoint()
     
-    # ========== MODIFIED: GOAL CALLBACK untuk PATH CHAINING ==========
     def goal_callback(self, msg):
         """Process goal pose from Rviz (untuk goal akhir) dengan path chaining"""
         # Extract position
@@ -999,7 +975,7 @@ class GlobalPathPlanner(Node):
                     self.dijkstra_data_saved = False
                 self.attempt_path_computation()
     
-    # ========== ENHANCED: REAL-TIME LENGTH UPDATES ==========
+    # real-time update
     def fast_length_update_callback(self):
         """10 Hz fast length updates tanpa replanning"""
         if self.goal_reached:
@@ -1111,7 +1087,7 @@ class GlobalPathPlanner(Node):
         length_msg.data = float(length)
         self.traveled_length_pub.publish(length_msg)
     
-    # ========== GOAL CHECKING (UNTUK GOAL AKHIR) ==========
+    # goal terakhir
     def check_goal_reached_callback(self):
         """High-frequency callback untuk check apakah goal sudah tercapai"""
         self.check_goal_reached()
@@ -1180,7 +1156,7 @@ class GlobalPathPlanner(Node):
         self.get_logger().debug(f"Published goal status: {'REACHED' if self.goal_reached else 'NOT REACHED'}",
                                throttle_duration_sec=1.0)
     
-    # ========== MODIFIED: ATTEMPT PATH COMPUTATION untuk PATH CHAINING ==========
+    # MODIFIED: ATTEMPT PATH COMPUTATION untuk PATH CHAINING 
     def attempt_path_computation(self):
         """Attempt to compute path if all data is available"""
         # Skip jika goal sudah tercapai
@@ -1244,7 +1220,7 @@ class GlobalPathPlanner(Node):
             
             self.get_logger().debug(f"Updated path from position: {len(self.global_path)} points remaining")
     
-    # ========== MODIFIED: COMPUTE GLOBAL PATH untuk PATH CHAINING ==========
+    # MODIFIED: COMPUTE GLOBAL PATH untuk PATH CHAINING
     def compute_global_path(self):
         """Compute path dari robot ke goal menggunakan costmap-aware Dijkstra"""
         # Skip jika goal sudah tercapai
@@ -1259,7 +1235,7 @@ class GlobalPathPlanner(Node):
         
         self.get_logger().info(f"Computing direct path: {start_world} -> {goal_world}")
         
-        # Compute path langsung (dengan data saving jika belum disimpan)
+        # Compute path langsung
         save_data = self.dijkstra_data_saving_enabled and not self.dijkstra_data_saved
         direct_path = self.compute_path_between_points(start_world, goal_world, save_data)
         
@@ -1280,13 +1256,13 @@ class GlobalPathPlanner(Node):
         self.path_valid = True
         self.total_plans += 1
         
-        self.get_logger().info(f"✅ Direct path computed: {len(self.global_path)} waypoints, "
+        self.get_logger().info(f"Direct path computed: {len(self.global_path)} waypoints, "
                               f"length: {self.path_length:.2f} meters")
         
         # Publish the path
         self.publish_path()
     
-    # ========== WAYPOINT FUNCTIONS ==========
+    # waypoint function
     def process_next_waypoint(self):
         """Process waypoint berikutnya dalam daftar (saat mencapai waypoint)"""
         if not self.waypoint_mode or not self.waypoints:
@@ -1297,7 +1273,7 @@ class GlobalPathPlanner(Node):
         
         if self.current_waypoint_index >= len(self.waypoints):
             # Semua waypoints sudah tercapai
-            self.get_logger().info("🎉 All waypoints have been reached!")
+            self.get_logger().info("All waypoints have been reached!")
             self.waypoint_mode = False
             self.waypoint_active = False
             self.publish_waypoint_status()
@@ -1343,8 +1319,8 @@ class GlobalPathPlanner(Node):
         # Check threshold
         if distance <= self.waypoint_proximity_threshold:
             # Waypoint tercapai!
-            self.get_logger().info(f"✅ Waypoint {self.current_waypoint_index + 1} reached!")
-            self.get_logger().info(f"  Distance: {distance:.3f}m")
+            self.get_logger().info(f"Waypoint {self.current_waypoint_index + 1} reached!")
+            self.get_logger().info(f"Distance: {distance:.3f}m")
             
             # Process next waypoint
             self.process_next_waypoint()
@@ -1367,7 +1343,7 @@ class GlobalPathPlanner(Node):
         self.get_logger().debug(f"Published waypoint status: {status_msg.data}",
                                throttle_duration_sec=2.0)
     
-    # ========== HELPER FUNCTIONS ==========
+    # Functions helper
     def world_to_grid(self, world_x, world_y):
         """Convert world coordinates to grid indices"""
         grid_x = int((world_x - self.map_origin[0]) / self.map_resolution)
@@ -1386,7 +1362,7 @@ class GlobalPathPlanner(Node):
         world_y = grid_y * self.map_resolution + self.map_origin[1]
         return (world_x, world_y)
     
-    # ========== PATH SMOOTHING FUNCTIONS ==========
+    # Path Smoothing
     def smooth_path(self, path_grid):
         """Smooth path dan downsample"""
         if len(path_grid) < 3:
@@ -1531,7 +1507,7 @@ class GlobalPathPlanner(Node):
         cell_cost = self.costmap[grid_y, grid_x]
         return cell_cost < self.inscribed_cost
     
-    # ========== PUBLISHING ==========
+    # publish
     def publish_path_callback(self):
         """Timer callback to publish path dan length"""
         # Skip publish jika goal sudah tercapai
@@ -1651,7 +1627,7 @@ class GlobalPathPlanner(Node):
         perf_msg.data = float(self.dijkstra_time * 1000)  # Convert to ms
         self.performance_pub.publish(perf_msg)
     
-    # ========== STATUS REPORTING ==========
+    # Status Reporting
     def status_report(self):
         """Periodic status report"""
         status = []
@@ -1725,29 +1701,29 @@ def main(args=None):
     except KeyboardInterrupt:
         # Final performance report
         node.get_logger().info("=" * 70)
-        node.get_logger().info("🛑 GLOBAL PATH PLANNER - FINAL STATS")
-        node.get_logger().info(f"   Total Runtime: {time.time() - node.start_time:.1f}s")
-        node.get_logger().info(f"   Costmap Creation Time: {node.costmap_creation_time:.2f}s")
-        node.get_logger().info(f"   Total Path Computations: {node.total_plans}")
-        node.get_logger().info(f"   Max Dijkstra Nodes Explored: {node.dijkstra_explored_nodes}")
+        node.get_logger().info("GLOBAL PATH PLANNER - FINAL STATS")
+        node.get_logger().info(f"Total Runtime: {time.time() - node.start_time:.1f}s")
+        node.get_logger().info(f"Costmap Creation Time: {node.costmap_creation_time:.2f}s")
+        node.get_logger().info(f"Total Path Computations: {node.total_plans}")
+        node.get_logger().info(f"Max Dijkstra Nodes Explored: {node.dijkstra_explored_nodes}")
         
         # Data saving info
         if node.dijkstra_data_saving_enabled:
-            node.get_logger().info(f"   Dijkstra Data Saved: {'YES' if node.dijkstra_data_saved else 'NO'}")
+            node.get_logger().info(f"Dijkstra Data Saved: {'YES' if node.dijkstra_data_saved else 'NO'}")
             if node.dijkstra_data_saved:
-                node.get_logger().info(f"   Data Saved to: {node.dijkstra_save_path}")
+                node.get_logger().info(f"Data Saved to: {node.dijkstra_save_path}")
         
         # Waypoint stats
         if node.waypoint_mode:
-            node.get_logger().info(f"   Waypoint Mode: ACTIVE")
-            node.get_logger().info(f"   Total Waypoints: {len(node.waypoints)}")
-            node.get_logger().info(f"   Completed Waypoints: {node.current_waypoint_index}")
-            node.get_logger().info(f"   Full Path Length: {node.path_length:.2f}m")
+            node.get_logger().info(f"Waypoint Mode: ACTIVE")
+            node.get_logger().info(f"Total Waypoints: {len(node.waypoints)}")
+            node.get_logger().info(f"Completed Waypoints: {node.current_waypoint_index}")
+            node.get_logger().info(f"Full Path Length: {node.path_length:.2f}m")
         else:
-            node.get_logger().info(f"   Waypoint Mode: INACTIVE")
+            node.get_logger().info(f"Waypoint Mode: INACTIVE")
         
-        node.get_logger().info(f"   Total Traveled Distance: {node.traveled_length:.2f}m")
-        node.get_logger().info(f"   Goal Status: {'REACHED' if node.goal_reached else 'NOT REACHED'}")
+        node.get_logger().info(f"Total Traveled Distance: {node.traveled_length:.2f}m")
+        node.get_logger().info(f"Goal Status: {'REACHED' if node.goal_reached else 'NOT REACHED'}")
         node.get_logger().info("=" * 70)
         
         node.get_logger().info("Node stopped by user")
