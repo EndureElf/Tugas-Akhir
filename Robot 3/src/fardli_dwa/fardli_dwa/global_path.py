@@ -18,7 +18,7 @@ class GlobalPathPlanner(Node):
     def __init__(self):
         super().__init__('global_path_planner')
         
-        # ========== PARAMETERS ==========
+        # Parameter
         self.occupied_threshold = 60      
         self.free_threshold = 15          
         self.inflation_radius = 15        # cells untuk robot radius
@@ -188,10 +188,10 @@ class GlobalPathPlanner(Node):
         self.create_timer(2.0, self.status_report)
         
         self.get_logger().info("=" * 70)
-        self.get_logger().info("🚀 Global Path Planner - DIJKSTRA VERSION")
-        self.get_logger().info("   Dengan cmd_vel tracking untuk estimasi jarak real-time")
-        self.get_logger().info("   Dengan FITUR WAYPOINT dengan PATH CHAINING")
-        self.get_logger().info("   Dengan PENYIMPANAN DATA DIJKSTRA (sekali saja)")
+        self.get_logger().info("Global Path Planner - DIJKSTRA VERSION")
+        self.get_logger().info("Dengan cmd_vel tracking untuk estimasi jarak real-time")
+        self.get_logger().info("Dengan FITUR WAYPOINT dengan PATH CHAINING")
+        self.get_logger().info("Dengan PENYIMPANAN DATA DIJKSTRA (sekali saja)")
         self.get_logger().info("=" * 70)
         self.get_logger().info(f"Global Path Planner with Goal Checking and Waypoints started")
     
@@ -258,7 +258,7 @@ class GlobalPathPlanner(Node):
         self.dijkstra_open_set_data.extend(snapshot_data)
     
     def _save_dijkstra_data(self):
-        """Simpan semua data Dijkstra ke file CSV (sekali saja)"""
+        """Simpan semua data Dijkstra ke file CSV"""
         if not self.dijkstra_data_saving_enabled or self.dijkstra_data_saved:
             return
         
@@ -305,7 +305,7 @@ class GlobalPathPlanner(Node):
             self._save_summary_statistics(summary_file)
             
             self.dijkstra_data_saved = True
-            self.get_logger().info(f"✅ Dijkstra data saved successfully to: {save_dir}")
+            self.get_logger().info(f"Dijkstra data saved successfully to: {save_dir}")
             
         except Exception as e:
             self.get_logger().error(f"Failed to save Dijkstra data: {str(e)}")
@@ -628,7 +628,7 @@ class GlobalPathPlanner(Node):
                 
                 total_path_length += segment_length
                 
-                self.get_logger().info(f"  Segment {i+1}: {len(segment_path)} points, length: {segment_length:.2f}m")
+                self.get_logger().info(f"Segment {i+1}: {len(segment_path)} points, length: {segment_length:.2f}m")
             else:
                 self.get_logger().error(f"Cannot compute path for segment {i+1}")
                 return
@@ -722,7 +722,6 @@ class GlobalPathPlanner(Node):
             dt = current_time - self.last_cmd_vel_update_time
             
             # Hitung jarak = kecepatan × waktu
-            # Gunakan kecepatan linear di sumbu x (untuk differential drive)
             distance = abs(msg.linear.x) * dt
             
             # Akumulasi jika signifikan
@@ -864,7 +863,7 @@ class GlobalPathPlanner(Node):
         gradient_mask = (distance_field > self.inflation_radius) & \
                        (distance_field <= self.inflation_radius * 1.5)
         
-        # Exponential decay gradient (VECTORIZED)
+        # Exponential decay gradient
         if np.any(gradient_mask):
             gradient_indices = np.where(gradient_mask)
             distances_grad = distance_field[gradient_indices]
@@ -968,7 +967,7 @@ class GlobalPathPlanner(Node):
             self.get_logger().info(f"Goal set (normal mode): ({x:.2f}, {y:.2f}), "
                                   f"theta: {math.degrees(yaw):.1f}°")
             
-            # Trigger path computation (dengan data saving untuk pertama kali)
+            # Trigger path computation
             if self.map_received and self.amcl_received:
                 # Reset data saving flag untuk memungkinkan penyimpanan baru
                 if self.dijkstra_data_saving_enabled:
@@ -1058,7 +1057,7 @@ class GlobalPathPlanner(Node):
         current_pos = (self.robot_pose[0], self.robot_pose[1])
         
         if self.last_robot_position:
-            # Hitung jarak dari posisi terakhir (geometric fallback)
+            # Hitung jarak dari posisi terakhir
             dx = current_pos[0] - self.last_robot_position[0]
             dy = current_pos[1] - self.last_robot_position[1]
             distance = math.sqrt(dx*dx + dy*dy)
@@ -1172,7 +1171,7 @@ class GlobalPathPlanner(Node):
             self.update_path_for_current_position()
             return
         
-        # Jika tidak ada waypoint, compute path normal (dengan data saving)
+        # Jika tidak ada waypoint, compute path normal
         if not self.waypoint_mode and self.goal_received:
             # Reset data saving flag jika belum disimpan
             if self.dijkstra_data_saving_enabled and not self.dijkstra_data_saved:
