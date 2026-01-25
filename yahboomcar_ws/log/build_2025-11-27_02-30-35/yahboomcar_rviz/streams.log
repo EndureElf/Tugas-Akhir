@@ -1,0 +1,63 @@
+[1.213s] Invoking command in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_rviz': PYTHONPATH=/home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboomcar_rviz build --build-base /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build install --record /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/install.log --single-version-externally-managed install_data
+[1.540s] running egg_info
+[1.540s] creating ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info
+[1.540s] writing ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/PKG-INFO
+[1.541s] writing dependency_links to ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/dependency_links.txt
+[1.541s] writing entry points to ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/entry_points.txt
+[1.541s] writing requirements to ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/requires.txt
+[1.541s] writing top-level names to ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/top_level.txt
+[1.541s] writing manifest file '../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/SOURCES.txt'
+[1.543s] reading manifest file '../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/SOURCES.txt'
+[1.545s] writing manifest file '../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/SOURCES.txt'
+[1.545s] running build
+[1.546s] running build_py
+[1.546s] creating /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build
+[1.546s] creating /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build/lib
+[1.546s] creating /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build/lib/yahboomcar_rviz
+[1.546s] copying yahboomcar_rviz/__init__.py -> /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build/lib/yahboomcar_rviz
+[1.546s] running install
+[1.549s] running install_lib
+[1.549s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/python3.10/site-packages/yahboomcar_rviz
+[1.549s] copying /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build/lib/yahboomcar_rviz/__init__.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/python3.10/site-packages/yahboomcar_rviz
+[1.549s] byte-compiling /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/python3.10/site-packages/yahboomcar_rviz/__init__.py to __init__.cpython-310.pyc
+[1.549s] running install_data
+[1.549s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/ament_index
+[1.550s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/ament_index/resource_index
+[1.550s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/ament_index/resource_index/packages
+[1.550s] copying resource/yahboomcar_rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/ament_index/resource_index/packages
+[1.550s] copying package.xml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz
+[1.550s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+[1.550s] copying launch/yahboomcar_urdf_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+[1.550s] copying launch/yahboomcar_nav_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+[1.550s] copying launch/display_multi_nav_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+[1.550s] copying launch/yahboomcar_laser_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+[1.550s] copying launch/display_nav_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+[1.550s] copying launch/yahboomcar_mapping_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+[1.550s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/urdf
+[1.550s] copying urdf/yahboomcar.urdf -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/urdf
+[1.550s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.551s] copying meshes/left_front_wheel.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.551s] copying meshes/imu_link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.564s] copying meshes/lidar_link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.564s] copying meshes/right_back_wheel.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.566s] copying meshes/left Front_Link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.568s] copying meshes/right front_Link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.570s] copying meshes/right back_Link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.571s] copying meshes/left back_Link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.572s] copying meshes/left_back_wheel.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.574s] copying meshes/camera_link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.575s] copying meshes/right_front_wheel.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.578s] copying meshes/camera2_link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.578s] copying meshes/base_link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+[1.581s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+[1.581s] copying rviz/nav_multi.rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+[1.581s] copying rviz/laser_scan.rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+[1.581s] copying rviz/nav.rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+[1.581s] copying rviz/yahboomcar.rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+[1.581s] copying rviz/mapping.rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+[1.581s] copying rviz/navigation.rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+[1.581s] running install_egg_info
+[1.584s] Copying ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info to /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/python3.10/site-packages/yahboomcar_rviz-0.0.0-py3.10.egg-info
+[1.587s] running install_scripts
+[1.605s] writing list of installed files to '/home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/install.log'
+[1.645s] Invoked command in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_rviz' returned '0': PYTHONPATH=/home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboomcar_rviz build --build-base /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build install --record /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/install.log --single-version-externally-managed install_data

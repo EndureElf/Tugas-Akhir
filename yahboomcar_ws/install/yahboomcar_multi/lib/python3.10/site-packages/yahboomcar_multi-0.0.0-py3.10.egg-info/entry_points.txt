@@ -1,0 +1,5 @@
+[console_scripts]
+listenline = yahboomcar_multi.listenline:main
+queue = yahboomcar_multi.queue:main
+yahboomcar_ctrl = yahboomcar_multi.yahboom_joy:main
+

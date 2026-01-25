@@ -1,0 +1,277 @@
+[0.217s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.217s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7b0b8046b280>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7b0b805b41f0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7b0b805b41f0>>, mixin_verb=('build',))
+[0.439s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.439s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.439s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.440s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.440s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.440s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.440s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/endure/TA/yahboomcar_ws'
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.440s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_description) by extensions ['ignore', 'ignore_ament_install']
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_description) by extension 'ignore'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_description) by extension 'ignore_ament_install'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_description) by extensions ['colcon_pkg']
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_description) by extension 'colcon_pkg'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_description) by extensions ['colcon_meta']
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_description) by extension 'colcon_meta'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_description) by extensions ['ros']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_description) by extension 'ros'
+[0.454s] DEBUG:colcon.colcon_core.package_identification:Package 'src/yahboomcar_description' with type 'ros.ament_python' and name 'yahboomcar_description'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_multi) by extensions ['ignore', 'ignore_ament_install']
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_multi) by extension 'ignore'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_multi) by extension 'ignore_ament_install'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_multi) by extensions ['colcon_pkg']
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_multi) by extension 'colcon_pkg'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_multi) by extensions ['colcon_meta']
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_multi) by extension 'colcon_meta'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_multi) by extensions ['ros']
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_multi) by extension 'ros'
+[0.455s] DEBUG:colcon.colcon_core.package_identification:Package 'src/yahboomcar_multi' with type 'ros.ament_python' and name 'yahboomcar_multi'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_nav) by extensions ['ignore', 'ignore_ament_install']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_nav) by extension 'ignore'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_nav) by extension 'ignore_ament_install'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_nav) by extensions ['colcon_pkg']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_nav) by extension 'colcon_pkg'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_nav) by extensions ['colcon_meta']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_nav) by extension 'colcon_meta'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_nav) by extensions ['ros']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_nav) by extension 'ros'
+[0.456s] DEBUG:colcon.colcon_core.package_identification:Package 'src/yahboomcar_nav' with type 'ros.ament_python' and name 'yahboomcar_nav'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_rviz) by extensions ['ignore', 'ignore_ament_install']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_rviz) by extension 'ignore'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_rviz) by extension 'ignore_ament_install'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_rviz) by extensions ['colcon_pkg']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_rviz) by extension 'colcon_pkg'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_rviz) by extensions ['colcon_meta']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_rviz) by extension 'colcon_meta'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_rviz) by extensions ['ros']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/yahboomcar_rviz) by extension 'ros'
+[0.457s] DEBUG:colcon.colcon_core.package_identification:Package 'src/yahboomcar_rviz' with type 'ros.ament_python' and name 'yahboomcar_rviz'
+[0.457s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.457s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.457s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.457s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.457s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.486s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.486s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.488s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/endure/TA/yahboomcar_ws/install
+[0.489s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 384 installed packages in /opt/ros/humble
+[0.490s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.522s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_description' build argument 'cmake_args' from command line to 'None'
+[0.522s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_description' build argument 'cmake_target' from command line to 'None'
+[0.522s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.522s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.522s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.522s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.522s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.522s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.522s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.522s] DEBUG:colcon.colcon_core.verb:Building package 'yahboomcar_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/endure/TA/yahboomcar_ws/build/yahboomcar_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description', 'merge_install': False, 'path': '/home/endure/TA/yahboomcar_ws/src/yahboomcar_description', 'symlink_install': False, 'test_result_base': None}
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_multi' build argument 'cmake_args' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_multi' build argument 'cmake_target' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_multi' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_multi' build argument 'cmake_clean_cache' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_multi' build argument 'cmake_clean_first' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_multi' build argument 'cmake_force_configure' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_multi' build argument 'ament_cmake_args' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_multi' build argument 'catkin_cmake_args' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_multi' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.523s] DEBUG:colcon.colcon_core.verb:Building package 'yahboomcar_multi' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/endure/TA/yahboomcar_ws/build/yahboomcar_multi', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi', 'merge_install': False, 'path': '/home/endure/TA/yahboomcar_ws/src/yahboomcar_multi', 'symlink_install': False, 'test_result_base': None}
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_nav' build argument 'cmake_args' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_nav' build argument 'cmake_target' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_nav' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_nav' build argument 'cmake_clean_cache' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_nav' build argument 'cmake_clean_first' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_nav' build argument 'cmake_force_configure' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_nav' build argument 'ament_cmake_args' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_nav' build argument 'catkin_cmake_args' from command line to 'None'
+[0.524s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_nav' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.524s] DEBUG:colcon.colcon_core.verb:Building package 'yahboomcar_nav' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/endure/TA/yahboomcar_ws/build/yahboomcar_nav', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav', 'merge_install': False, 'path': '/home/endure/TA/yahboomcar_ws/src/yahboomcar_nav', 'symlink_install': False, 'test_result_base': None}
+[0.524s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_rviz' build argument 'cmake_args' from command line to 'None'
+[0.524s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_rviz' build argument 'cmake_target' from command line to 'None'
+[0.524s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_rviz' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.524s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_rviz' build argument 'cmake_clean_cache' from command line to 'False'
+[0.524s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_rviz' build argument 'cmake_clean_first' from command line to 'False'
+[0.524s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_rviz' build argument 'cmake_force_configure' from command line to 'False'
+[0.524s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_rviz' build argument 'ament_cmake_args' from command line to 'None'
+[0.524s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_rviz' build argument 'catkin_cmake_args' from command line to 'None'
+[0.524s] Level 5:colcon.colcon_core.verb:set package 'yahboomcar_rviz' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.524s] DEBUG:colcon.colcon_core.verb:Building package 'yahboomcar_rviz' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz', 'merge_install': False, 'path': '/home/endure/TA/yahboomcar_ws/src/yahboomcar_rviz', 'symlink_install': False, 'test_result_base': None}
+[0.524s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.525s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.525s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_description' with build type 'ament_python'
+[0.525s] Level 1:colcon.colcon_core.shell:create_environment_hook('yahboomcar_description', 'ament_prefix_path')
+[0.528s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.528s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/share/yahboomcar_description/hook/ament_prefix_path.ps1'
+[0.529s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/share/yahboomcar_description/hook/ament_prefix_path.dsv'
+[0.529s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/share/yahboomcar_description/hook/ament_prefix_path.sh'
+[0.530s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.530s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.532s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_multi' with build type 'ament_python'
+[0.532s] Level 1:colcon.colcon_core.shell:create_environment_hook('yahboomcar_multi', 'ament_prefix_path')
+[0.533s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/hook/ament_prefix_path.ps1'
+[0.533s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/hook/ament_prefix_path.dsv'
+[0.533s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/hook/ament_prefix_path.sh'
+[0.534s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.534s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.536s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_nav' with build type 'ament_python'
+[0.537s] Level 1:colcon.colcon_core.shell:create_environment_hook('yahboomcar_nav', 'ament_prefix_path')
+[0.537s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/share/yahboomcar_nav/hook/ament_prefix_path.ps1'
+[0.537s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/share/yahboomcar_nav/hook/ament_prefix_path.dsv'
+[0.538s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/share/yahboomcar_nav/hook/ament_prefix_path.sh'
+[0.538s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.538s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.541s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_rviz' with build type 'ament_python'
+[0.541s] Level 1:colcon.colcon_core.shell:create_environment_hook('yahboomcar_rviz', 'ament_prefix_path')
+[0.541s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/hook/ament_prefix_path.ps1'
+[0.542s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/hook/ament_prefix_path.dsv'
+[0.542s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/hook/ament_prefix_path.sh'
+[0.543s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.543s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.728s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_description'
+[0.729s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.729s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.908s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_multi'
+[0.909s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.909s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.091s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_nav'
+[1.091s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.091s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.283s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_rviz'
+[1.284s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.284s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.812s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_nav': PYTHONPATH=/home/endure/TA/yahboomcar_ws/build/yahboomcar_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboomcar_nav build --build-base /home/endure/TA/yahboomcar_ws/build/yahboomcar_nav/build install --record /home/endure/TA/yahboomcar_ws/build/yahboomcar_nav/install.log --single-version-externally-managed install_data
+[1.819s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_rviz': PYTHONPATH=/home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboomcar_rviz build --build-base /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build install --record /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/install.log --single-version-externally-managed install_data
+[1.823s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_description': PYTHONPATH=/home/endure/TA/yahboomcar_ws/build/yahboomcar_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboomcar_description build --build-base /home/endure/TA/yahboomcar_ws/build/yahboomcar_description/build install --record /home/endure/TA/yahboomcar_ws/build/yahboomcar_description/install.log --single-version-externally-managed install_data
+[1.825s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_multi': PYTHONPATH=/home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboomcar_multi build --build-base /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build install --record /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/install.log --single-version-externally-managed install_data
+[2.215s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_nav' returned '0': PYTHONPATH=/home/endure/TA/yahboomcar_ws/build/yahboomcar_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboomcar_nav build --build-base /home/endure/TA/yahboomcar_ws/build/yahboomcar_nav/build install --record /home/endure/TA/yahboomcar_ws/build/yahboomcar_nav/install.log --single-version-externally-managed install_data
+[2.223s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav' for CMake module files
+[2.223s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav' for CMake config files
+[2.224s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/lib'
+[2.227s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/bin'
+[2.227s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/lib/pkgconfig/yahboomcar_nav.pc'
+[2.227s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/lib/python3.10/site-packages'
+[2.228s] Level 1:colcon.colcon_core.shell:create_environment_hook('yahboomcar_nav', 'pythonpath')
+[2.228s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/share/yahboomcar_nav/hook/pythonpath.ps1'
+[2.229s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/share/yahboomcar_nav/hook/pythonpath.dsv'
+[2.229s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/share/yahboomcar_nav/hook/pythonpath.sh'
+[2.230s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/bin'
+[2.233s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(yahboomcar_nav)
+[2.234s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/share/yahboomcar_nav/package.ps1'
+[2.237s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/share/yahboomcar_nav/package.dsv'
+[2.240s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/share/yahboomcar_nav/package.sh'
+[2.242s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/share/yahboomcar_nav/package.bash'
+[2.245s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/share/yahboomcar_nav/package.zsh'
+[2.246s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/endure/TA/yahboomcar_ws/install/yahboomcar_nav/share/colcon-core/packages/yahboomcar_nav)
+[2.247s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz' for CMake module files
+[2.249s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_rviz' returned '0': PYTHONPATH=/home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboomcar_rviz build --build-base /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build install --record /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/install.log --single-version-externally-managed install_data
+[2.249s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz' for CMake config files
+[2.250s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib'
+[2.250s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/bin'
+[2.250s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/pkgconfig/yahboomcar_rviz.pc'
+[2.250s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/python3.10/site-packages'
+[2.250s] Level 1:colcon.colcon_core.shell:create_environment_hook('yahboomcar_rviz', 'pythonpath')
+[2.251s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/hook/pythonpath.ps1'
+[2.251s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/hook/pythonpath.dsv'
+[2.251s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/hook/pythonpath.sh'
+[2.252s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/bin'
+[2.252s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(yahboomcar_rviz)
+[2.253s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/package.ps1'
+[2.253s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/package.dsv'
+[2.253s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/package.sh'
+[2.254s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/package.bash'
+[2.254s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/package.zsh'
+[2.254s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/colcon-core/packages/yahboomcar_rviz)
+[2.256s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description' for CMake module files
+[2.256s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_description' returned '0': PYTHONPATH=/home/endure/TA/yahboomcar_ws/build/yahboomcar_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboomcar_description build --build-base /home/endure/TA/yahboomcar_ws/build/yahboomcar_description/build install --record /home/endure/TA/yahboomcar_ws/build/yahboomcar_description/install.log --single-version-externally-managed install_data
+[2.256s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description' for CMake config files
+[2.257s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/lib'
+[2.257s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/bin'
+[2.257s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/lib/pkgconfig/yahboomcar_description.pc'
+[2.257s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/lib/python3.10/site-packages'
+[2.257s] Level 1:colcon.colcon_core.shell:create_environment_hook('yahboomcar_description', 'pythonpath')
+[2.258s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/share/yahboomcar_description/hook/pythonpath.ps1'
+[2.258s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/share/yahboomcar_description/hook/pythonpath.dsv'
+[2.258s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/share/yahboomcar_description/hook/pythonpath.sh'
+[2.259s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/bin'
+[2.259s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(yahboomcar_description)
+[2.259s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/share/yahboomcar_description/package.ps1'
+[2.260s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/share/yahboomcar_description/package.dsv'
+[2.260s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/share/yahboomcar_description/package.sh'
+[2.261s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/share/yahboomcar_description/package.bash'
+[2.261s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/share/yahboomcar_description/package.zsh'
+[2.261s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/endure/TA/yahboomcar_ws/install/yahboomcar_description/share/colcon-core/packages/yahboomcar_description)
+[2.262s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi' for CMake module files
+[2.263s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_multi' returned '0': PYTHONPATH=/home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboomcar_multi build --build-base /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build install --record /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/install.log --single-version-externally-managed install_data
+[2.263s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi' for CMake config files
+[2.264s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib'
+[2.264s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/bin'
+[2.264s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/pkgconfig/yahboomcar_multi.pc'
+[2.264s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages'
+[2.264s] Level 1:colcon.colcon_core.shell:create_environment_hook('yahboomcar_multi', 'pythonpath')
+[2.264s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/hook/pythonpath.ps1'
+[2.265s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/hook/pythonpath.dsv'
+[2.265s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/hook/pythonpath.sh'
+[2.266s] Level 1:colcon.colcon_core.environment:checking '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/bin'
+[2.266s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(yahboomcar_multi)
+[2.266s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/package.ps1'
+[2.266s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/package.dsv'
+[2.267s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/package.sh'
+[2.267s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/package.bash'
+[2.267s] INFO:colcon.colcon_core.shell:Creating package script '/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/package.zsh'
+[2.267s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/colcon-core/packages/yahboomcar_multi)
+[2.268s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.268s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.268s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[2.268s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.272s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.272s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.272s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.286s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.286s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/endure/TA/yahboomcar_ws/install/local_setup.ps1'
+[2.287s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/endure/TA/yahboomcar_ws/install/_local_setup_util_ps1.py'
+[2.288s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/endure/TA/yahboomcar_ws/install/setup.ps1'
+[2.289s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/endure/TA/yahboomcar_ws/install/local_setup.sh'
+[2.290s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/endure/TA/yahboomcar_ws/install/_local_setup_util_sh.py'
+[2.290s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/endure/TA/yahboomcar_ws/install/setup.sh'
+[2.291s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/endure/TA/yahboomcar_ws/install/local_setup.bash'
+[2.291s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/endure/TA/yahboomcar_ws/install/setup.bash'
+[2.292s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/endure/TA/yahboomcar_ws/install/local_setup.zsh'
+[2.293s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/endure/TA/yahboomcar_ws/install/setup.zsh'

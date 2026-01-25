@@ -1,0 +1,61 @@
+running egg_info
+creating ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info
+writing ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/PKG-INFO
+writing dependency_links to ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/dependency_links.txt
+writing entry points to ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/entry_points.txt
+writing requirements to ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/requires.txt
+writing top-level names to ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/top_level.txt
+writing manifest file '../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/SOURCES.txt'
+reading manifest file '../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/SOURCES.txt'
+writing manifest file '../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build
+creating /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build/lib
+creating /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build/lib/yahboomcar_rviz
+copying yahboomcar_rviz/__init__.py -> /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build/lib/yahboomcar_rviz
+running install
+running install_lib
+creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/python3.10/site-packages/yahboomcar_rviz
+copying /home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/build/lib/yahboomcar_rviz/__init__.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/python3.10/site-packages/yahboomcar_rviz
+byte-compiling /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/python3.10/site-packages/yahboomcar_rviz/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/ament_index
+creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/ament_index/resource_index
+creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/ament_index/resource_index/packages
+copying resource/yahboomcar_rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/ament_index/resource_index/packages
+copying package.xml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz
+creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+copying launch/yahboomcar_urdf_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+copying launch/yahboomcar_nav_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+copying launch/display_multi_nav_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+copying launch/yahboomcar_laser_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+copying launch/display_nav_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+copying launch/yahboomcar_mapping_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/launch
+creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/urdf
+copying urdf/yahboomcar.urdf -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/urdf
+creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+copying meshes/left_front_wheel.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+copying meshes/imu_link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+copying meshes/lidar_link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+copying meshes/right_back_wheel.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+copying meshes/left Front_Link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+copying meshes/right front_Link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+copying meshes/right back_Link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+copying meshes/left back_Link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+copying meshes/left_back_wheel.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+copying meshes/camera_link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+copying meshes/right_front_wheel.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+copying meshes/camera2_link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+copying meshes/base_link.STL -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/meshes
+creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+copying rviz/nav_multi.rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+copying rviz/laser_scan.rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+copying rviz/nav.rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+copying rviz/yahboomcar.rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+copying rviz/mapping.rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+copying rviz/navigation.rviz -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/share/yahboomcar_rviz/rviz
+running install_egg_info
+Copying ../../build/yahboomcar_rviz/yahboomcar_rviz.egg-info to /home/endure/TA/yahboomcar_ws/install/yahboomcar_rviz/lib/python3.10/site-packages/yahboomcar_rviz-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/endure/TA/yahboomcar_ws/build/yahboomcar_rviz/install.log'

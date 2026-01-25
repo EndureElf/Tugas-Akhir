@@ -1,0 +1,78 @@
+[1.221s] Invoking command in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_multi': PYTHONPATH=/home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboomcar_multi build --build-base /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build install --record /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/install.log --single-version-externally-managed install_data
+[1.544s] running egg_info
+[1.546s] creating ../../build/yahboomcar_multi/yahboomcar_multi.egg-info
+[1.547s] writing ../../build/yahboomcar_multi/yahboomcar_multi.egg-info/PKG-INFO
+[1.547s] writing dependency_links to ../../build/yahboomcar_multi/yahboomcar_multi.egg-info/dependency_links.txt
+[1.547s] writing entry points to ../../build/yahboomcar_multi/yahboomcar_multi.egg-info/entry_points.txt
+[1.548s] writing requirements to ../../build/yahboomcar_multi/yahboomcar_multi.egg-info/requires.txt
+[1.548s] writing top-level names to ../../build/yahboomcar_multi/yahboomcar_multi.egg-info/top_level.txt
+[1.548s] writing manifest file '../../build/yahboomcar_multi/yahboomcar_multi.egg-info/SOURCES.txt'
+[1.554s] reading manifest file '../../build/yahboomcar_multi/yahboomcar_multi.egg-info/SOURCES.txt'
+[1.557s] writing manifest file '../../build/yahboomcar_multi/yahboomcar_multi.egg-info/SOURCES.txt'
+[1.557s] running build
+[1.558s] running build_py
+[1.558s] creating /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build
+[1.560s] creating /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build/lib
+[1.561s] creating /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build/lib/yahboomcar_multi
+[1.561s] copying yahboomcar_multi/singlePID.py -> /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build/lib/yahboomcar_multi
+[1.561s] copying yahboomcar_multi/queue.py -> /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build/lib/yahboomcar_multi
+[1.561s] copying yahboomcar_multi/__init__.py -> /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build/lib/yahboomcar_multi
+[1.561s] copying yahboomcar_multi/listenline.py -> /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build/lib/yahboomcar_multi
+[1.562s] copying yahboomcar_multi/yahboom_joy.py -> /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build/lib/yahboomcar_multi
+[1.562s] running install
+[1.562s] running install_lib
+[1.562s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages/yahboomcar_multi
+[1.562s] copying /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build/lib/yahboomcar_multi/singlePID.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages/yahboomcar_multi
+[1.564s] copying /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build/lib/yahboomcar_multi/queue.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages/yahboomcar_multi
+[1.564s] copying /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build/lib/yahboomcar_multi/__init__.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages/yahboomcar_multi
+[1.565s] copying /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build/lib/yahboomcar_multi/listenline.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages/yahboomcar_multi
+[1.565s] copying /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build/lib/yahboomcar_multi/yahboom_joy.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages/yahboomcar_multi
+[1.566s] byte-compiling /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages/yahboomcar_multi/singlePID.py to singlePID.cpython-310.pyc
+[1.567s] byte-compiling /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages/yahboomcar_multi/queue.py to queue.cpython-310.pyc
+[1.570s] byte-compiling /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages/yahboomcar_multi/__init__.py to __init__.cpython-310.pyc
+[1.570s] byte-compiling /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages/yahboomcar_multi/listenline.py to listenline.cpython-310.pyc
+[1.572s] byte-compiling /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages/yahboomcar_multi/yahboom_joy.py to yahboom_joy.cpython-310.pyc
+[1.574s] running install_data
+[1.575s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/ament_index
+[1.575s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/ament_index/resource_index
+[1.575s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/ament_index/resource_index/packages
+[1.575s] copying resource/yahboomcar_multi -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/ament_index/resource_index/packages
+[1.575s] copying package.xml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi
+[1.575s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/param
+[1.575s] copying param/robot1_nav_params.yaml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/param
+[1.575s] copying param/robot2_amcl_params.yaml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/param
+[1.575s] copying param/ekf_yahboom.yaml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/param
+[1.575s] copying param/robot1_nav_params_bk.yaml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/param
+[1.576s] copying param/robot2_nav_params.yaml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/param
+[1.576s] copying param/ekf_robot2.yaml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/param
+[1.576s] copying param/robot1_amcl_params.yaml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/param
+[1.576s] copying param/imu_filter_param.yaml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/param
+[1.577s] copying param/ekf_robot1.yaml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/param
+[1.577s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/maps
+[1.577s] copying maps/yahboom_map_lss_carto.yaml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/maps
+[1.577s] copying maps/yahboom_map.yaml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/maps
+[1.577s] creating /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.578s] copying launch/laser_bringup_multi.launch.xml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.578s] copying launch/nav2_multi.launch.xml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.578s] copying launch/robot1_nav.launch.xml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.578s] copying launch/yahboomcar_bringup_multi.launch.xml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.579s] copying launch/robot2_amcl.launch.xml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.579s] copying launch/lidar_multi.launch.xml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.579s] copying launch/robot1_amcl.launch.xml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.579s] copying launch/map_server.launch.xml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.579s] copying launch/multi_ctrl.launch.xml -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.580s] copying launch/robot1_amcl_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.580s] copying launch/multi_queue_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.580s] copying launch/robot2_amcl_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.580s] copying launch/map_server_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.580s] copying launch/test_tf_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.580s] copying launch/robot2_nav_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.581s] copying launch/robot1_nav_launch.py -> /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/share/yahboomcar_multi/launch
+[1.581s] running install_egg_info
+[1.584s] Copying ../../build/yahboomcar_multi/yahboomcar_multi.egg-info to /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages/yahboomcar_multi-0.0.0-py3.10.egg-info
+[1.587s] running install_scripts
+[1.611s] Installing listenline script to /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/yahboomcar_multi
+[1.612s] Installing queue script to /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/yahboomcar_multi
+[1.612s] Installing yahboomcar_ctrl script to /home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/yahboomcar_multi
+[1.612s] writing list of installed files to '/home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/install.log'
+[1.641s] Invoked command in '/home/endure/TA/yahboomcar_ws/src/yahboomcar_multi' returned '0': PYTHONPATH=/home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/endure/TA/yahboomcar_ws/install/yahboomcar_multi/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yahboomcar_multi build --build-base /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/build install --record /home/endure/TA/yahboomcar_ws/build/yahboomcar_multi/install.log --single-version-externally-managed install_data

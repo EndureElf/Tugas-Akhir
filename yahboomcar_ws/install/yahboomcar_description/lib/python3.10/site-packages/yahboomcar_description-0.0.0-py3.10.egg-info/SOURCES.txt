@@ -1,0 +1,31 @@
+package.xml
+setup.cfg
+setup.py
+../../build/yahboomcar_description/yahboomcar_description.egg-info/PKG-INFO
+../../build/yahboomcar_description/yahboomcar_description.egg-info/SOURCES.txt
+../../build/yahboomcar_description/yahboomcar_description.egg-info/dependency_links.txt
+../../build/yahboomcar_description/yahboomcar_description.egg-info/entry_points.txt
+../../build/yahboomcar_description/yahboomcar_description.egg-info/requires.txt
+../../build/yahboomcar_description/yahboomcar_description.egg-info/top_level.txt
+../../build/yahboomcar_description/yahboomcar_description.egg-info/zip-safe
+launch/description_launch.py
+launch/display_launch.py
+meshes/base_link.STL
+meshes/camera2_link.STL
+meshes/camera_link.STL
+meshes/imu_link.STL
+meshes/left Front_link.STL
+meshes/left back_link.STL
+meshes/left_back_wheel.STL
+meshes/left_front_wheel.STL
+meshes/lidar_link.STL
+meshes/right back_link.STL
+meshes/right front_link.STL
+meshes/right_back_wheel.STL
+meshes/right_front_wheel.STL
+resource/yahboomcar_description
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
+urdf/yahboomcar.urdf
+yahboomcar_description/__init__.py
